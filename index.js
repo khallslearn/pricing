@@ -13,6 +13,16 @@ const productList = [
       name: "Product 3",
       price: 7.99,
       url: "https://www.example.com/product3"
+    },
+    {
+      name: "Product 4",
+      price: 11.99,
+      url: "https://www.example.com/product3"
+    },
+    {
+      name: "Product 5",
+      price: 12.99,
+      url: "https://www.example.com/product3"
     }
   ];
   
@@ -21,6 +31,7 @@ const productList = [
   
   function renderProductList(products) {
     productListElement.innerHTML = "";
+    productListElement.style.display="none"
     products.forEach((product) => {
       const productElement = document.createElement("li");
       productElement.innerHTML = `
@@ -43,5 +54,5 @@ const productList = [
     filterProducts(searchInput.value);
   });
   
-  renderProductList(productList);
+  renderProductList(productList).toggle;
   
