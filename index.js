@@ -31,7 +31,7 @@ const productList = [
   
   function renderProductList(products) {
     productListElement.innerHTML = "";
-    productListElement.style.display="none"
+    
     products.forEach((product) => {
       const productElement = document.createElement("li");
       productElement.innerHTML = `
@@ -52,6 +52,7 @@ const productList = [
   
   searchInput.addEventListener("keyup", () => {
     filterProducts(searchInput.value);
+    productListElement.removeAttribute("hidden");
   });
   
   renderProductList(productList).toggle;
