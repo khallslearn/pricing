@@ -1,3 +1,4 @@
+/*
 const productList = [
     {
       name: "Product 1",
@@ -55,5 +56,20 @@ const productList = [
     productListElement.removeAttribute("hidden");
   });
   
-  renderProductList(productList).toggle;
-  
+  renderProductList(productList).toggle;*/
+  document.querySelector('button').addEventListener('click', getFetch)
+  function getFetch(){
+  const searchInput = document.getElementById("search").value;
+  const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '37c2f13ef6msh05aaef1aa601b12p1d9b7fjsn9dcf3dd6ee8a',
+		'X-RapidAPI-Host': 'pricer.p.rapidapi.com'
+	}
+};
+
+fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+  }
