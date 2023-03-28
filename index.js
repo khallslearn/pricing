@@ -77,8 +77,9 @@ fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
         )*/
         .then(data => {
             console.log(data)
-            document.querySelector("h2").innerHTML=`Title:${data[0].title} ${data[0].img} Price: ${data[0].price} Website: ${data[0].shop}`,
-        document.querySelector("h3").innerHTML=`Title:${data[1].title} ${data[1].img} Price: ${data[1].price} Website: ${data[1].shop}` 
+            document.querySelector("h2").innerHTML=`Title:${data[0].title} Price: ${data[0].price} Website: ${data[0].shop}`,
+            document.querySelector("img").src = data[0].img.value,
+        document.querySelector("h3").innerHTML=`Title:${data[1].title} Price: ${data[1].price} Website: ${data[1].shop}` 
         })
 	.catch(err => console.error(err));
   }
