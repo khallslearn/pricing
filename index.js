@@ -71,11 +71,14 @@ const productList = [
 fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
 	.then(response => response.json())
     //.then(response => console.log(response[0]))
-	.then(response => 
+	/*.then(response => 
         document.querySelector("h2").innerHTML=`Title:${response[0].title} Price: ${response[0].price}`,
         document.querySelector("h3").innerHTML=`Title:${response[0].title} Price: ${response[0].price}` 
-        )
-	
-
+        )*/
+        .then(data => {
+            console.log(data)
+            document.querySelector("h2").innerHTML=`Title:${data[0].title} ${data[0].img} Price: ${data[0].price} Website: ${data[0].shop}`,
+        document.querySelector("h3").innerHTML=`Title:${data[1].title} ${data[1].img} Price: ${data[1].price} Website: ${data[1].shop}` 
+        })
 	.catch(err => console.error(err));
   }
