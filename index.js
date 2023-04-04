@@ -85,7 +85,7 @@ fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
             document.getElementById("price2").innerHTML=`Price: ${data[1].price} `
             //document.getElementById("img)").innerText = `Image: ${data[0].img}`
             document.getElementById("link2").innerHTML =`Website: ${data[1].link}`
-        document.querySelector("h3").innerText=`Title:${data[1].title} Price: ${data[1].price} Website: ${data[1].shop}` 
+       // document.querySelector("h3").innerText=`Title:${data[1].title} Price: ${data[1].price} Website: ${data[1].shop}` 
         })
 	.catch(err => console.error(err));
   }
