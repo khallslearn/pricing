@@ -79,16 +79,24 @@ fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
             console.log(data)
             document.getElementById("title").innerHTML=`Title:${data[0].title}`
             document.getElementById("price").innerHTML=`Price: ${data[0].price} `
-          const img1 = document.getElementById("image1)")
-          img1.src = data[0].img
-           //document.createElement('div').innerHTML = `Image: <img src=" ${data[0].img}">`
-           document.getElementById("link").innerHTML =`Website: ${data[0].link}`
+         var imageUrl = data[0].img
+         document.getElementById('image1').setAttribute('src', imageUrl);
+
+         var linkUrl = data[0].link
+         	// Create a new a element and set its href attribute to the link URL
+				const linkElement = document.createElement('a');
+				linkElement.setAttribute('href', linkUrl);
+				linkElement.textContent = 'Click here to go to the link';
+				
+				// Add the link element to the HTML page
+				document.getElementById('link').appendChild(linkElement);
+          // document.getElementById("link").innerHTML =`Website: ${data[0].link}`
             document.getElementById("title2").innerHTML=`Title:${data[1].title}`
             document.getElementById("price2").innerHTML=`Price: ${data[1].price} `
             //document.getElementById("img)").innerText = `Image: ${data[0].img}`
             document.getElementById("link2").innerHTML =`Website: ${data[1].link}`
        // document.querySelector("h3").innerText=`Title:${data[1].title} Price: ${data[1].price} Website: ${data[1].shop}` 
-        })
+    })
 	.catch(err => console.error(err));
   }
 
