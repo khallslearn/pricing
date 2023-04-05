@@ -79,8 +79,10 @@ fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
             console.log(data)
             document.getElementById("title").innerHTML=`Title:${data[0].title}`
             document.getElementById("price").innerHTML=`Price: ${data[0].price} `
-            //document.getElementById("img)").innerText = `Image: ${data[0].img}`
-            document.getElementById("link").innerHTML =`Website: ${data[0].link}`
+          const img1 = document.getElementById("image1)")
+          img1.src = data[0].img
+           //document.createElement('div').innerHTML = `Image: <img src=" ${data[0].img}">`
+           document.getElementById("link").innerHTML =`Website: ${data[0].link}`
             document.getElementById("title2").innerHTML=`Title:${data[1].title}`
             document.getElementById("price2").innerHTML=`Price: ${data[1].price} `
             //document.getElementById("img)").innerText = `Image: ${data[0].img}`
@@ -89,3 +91,7 @@ fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
         })
 	.catch(err => console.error(err));
   }
+
+
+//image link
+//hyper linking
