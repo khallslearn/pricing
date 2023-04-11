@@ -97,10 +97,13 @@ fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
             document.getElementById('image2').setAttribute('src', imageUrl1);         
               // document.getElementById("link2").innerHTML =`Website: ${data[1].link}`
             // document.querySelector("h3").innerText=`Title:${data[1].title} Price: ${data[1].price} Website: ${data[1].shop}` 
-            var linkUrl1 = data[1].link
-            const linkElement1 = document.createElement('a');
+        var linkUrl1 = data[1].link
+     const linkElement1 = document.createElement('a');
        linkElement1.setAttribute('href', linkUrl1);
-       linkElement1.textContent = 'Click here to go to the link';})
+       linkElement1.textContent = 'Click here to go to the link';
+       document.getElementById('link2').appendChild(linkElement1);
+
+    })
 	.catch(err => console.error(err));
   }
 
