@@ -108,5 +108,4 @@ fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
   }
 
 
-//image link
-//hyper linking
+//mapping 
