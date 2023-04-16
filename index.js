@@ -117,4 +117,4 @@ fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
   }
 
 
-//mapping 
+//mapping all
