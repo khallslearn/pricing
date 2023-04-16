@@ -77,7 +77,16 @@ fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
         )*/
         .then(data => {
             console.log(data)
-            document.getElementById("title").innerHTML=`Title:${data[0].title}`
+            let list =  document.getElementById("title")
+            data.slice(-5).forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item.title; // Replace with the property you want to display in the list
+                list.appendChild(listItem);
+              });
+              document.body.appendChild(list);
+           
+           
+            /*document.getElementById("title").innerHTML=`Title:${data[0].title}`
             document.getElementById("price").innerHTML=`Price: ${data[0].price} `
          var imageUrl = data[0].img
          document.getElementById('image1').setAttribute('src', imageUrl);
@@ -102,7 +111,7 @@ fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
        linkElement1.setAttribute('href', linkUrl1);
        linkElement1.textContent = 'Click here to go to the link';
        document.getElementById('link2').appendChild(linkElement1);
-
+*/
     })
 	.catch(err => console.error(err));
   }
