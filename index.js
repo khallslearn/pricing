@@ -79,9 +79,20 @@ fetch(`https://pricer.p.rapidapi.com/str?q=${searchInput}`, options)
             console.log(data)
             let list =  document.getElementById("title")
             data.slice(-5).forEach(item => {
-                const listItem = document.createElement('li');
-                listItem.textContent = item.title; // Replace with the property you want to display in the list
-                list.appendChild(listItem);
+                const listTitle = document.createElement('ul');
+                const listPrice = document.createElement('li')
+                const listWeb = document.createElement('a')
+                const listPic = document.createElement('img')
+                listTitle.textContent = `Title: ${item.title}`; // Replace with the property you want to display in the list
+                listPrice.textContent = `Price: ${item.price}`;
+                listWeb.setAttribute('href',item.link);
+                listWeb.innerHTML=`Click Here`;
+                listPic.setAttribute('src',item.img);
+                list.appendChild(listTitle);
+                list.appendChild(listPrice);
+                list.appendChild(listWeb);
+                list.appendChild(listPic);
+
               });
               document.body.appendChild(list);
            
